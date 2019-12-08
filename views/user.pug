@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        title Document
+    body
+        h1 Get user
+        form(action="/user/search" method="get")
+            input(type="text", name="search")
+            button search
+
+        h2 result:
+        ul
+            - if (user)
+                - for (var x = 0; x < user.length; x++)
+                    li(class = 'user')
+                        p username: #{user[x].username} 
+                        p hobbit: #{user[x].hobbit}
